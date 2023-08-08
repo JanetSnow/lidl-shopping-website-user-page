@@ -1,0 +1,48 @@
+/* .menuItems{
+    padding:0px 4.5rem;
+    height:100vh;
+    position: absolute;
+    z-index:1;
+    left:-27.5rem;
+}
+.homePageGroceryWrapper{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    border: #429cf5 2px;
+    border-style: solid solid none solid;
+    width:214.5px;
+    margin:0 35px;
+} */
+/* 
+.amount{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid teal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px;
+} */
+
+/* @media screen and (max-width: 850px) {
+    .homePageGroceryWrapper{
+        width:215px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .homePageGroceryWrapper{
+        width:196px;
+        margin:0 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .homePageGroceryWrapper{
+        width:196px;
+        margin:0 20px;
+    }
+} */
