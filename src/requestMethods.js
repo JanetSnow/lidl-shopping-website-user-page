@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://lidl-shopping-website-api.onrender.com";
+const BASE_URL = "https://lidl-shopping-website-api.onrender.com/api/";
 // const TOKEN = "";
 
 const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
