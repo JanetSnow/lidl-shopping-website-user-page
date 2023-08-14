@@ -8,7 +8,9 @@ import {tabletMini} from "../responsive";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import { logout } from '../redux/apiCalls';
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import {publicRequest} from "../requestMethods";
 
 const Container = styled.div`
 height: 146px;
@@ -98,12 +100,23 @@ ${mobile({padding:"5px", fontSize:"10px", margin: "0 8px 0 0"})}
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity);
   const user = useSelector(state => state.user.currentUser);
+  const [title, setTitle] = useState("");
+  
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogOut = (e) => {
       e.preventDefault();
       logout(dispatch);
   }
+  const handleSearch = async (e) => {
+    try{
+      e.preventDefault();
+      const res = await publicRequest.get(`/products/findbytitle/${title}`);
+      // 要是{}的样子，而不是数组
+      res.data[0] && navigate(`/product/${res.data[0]._id}`);
+    }catch{}
+  };
  
   return (
     <Container>
@@ -114,7 +127,9 @@ const Navbar = () => {
         <Link to="/login" style={{ textDecoration: 'none', color:"black" }}>
           <NavItem onClick={user && handleLogOut}>{user ? "SIGN OUT" : "SIGN IN"}</NavItem>
         </Link>
-        <NavItem>CONTACT US</NavItem>
+        <Link to="/" style={{ textDecoration: 'none', color:"black" }}>
+        <NavItem>HOME</NavItem>
+        </Link>
     </NavItems>
     <Wrapper>
         <Left>
@@ -125,8 +140,10 @@ const Navbar = () => {
         </Left>
         <Center>
         <SearchContainer>
-            <Search style={{color: "gray", fontSize: 24}}/>
-            <Input placeholder= "Find a product"/>
+            {/* <Link to={`/product/${product._id}`}> */}
+              <Search style={{color: "gray", fontSize: 24, cursor: "pointer"}} onClick={handleSearch}/>
+            {/* </Link> */}
+            <Input placeholder= "Find a product" onChange={e => setTitle(e.target.value)} />
         </SearchContainer>
         </Center>
         <Right>           

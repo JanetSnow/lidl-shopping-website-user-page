@@ -207,7 +207,7 @@ const Cart = () => {
                   <ProductAmountContainer>
                     <ProductAmount>quantity: {product.quantity}</ProductAmount>
                   </ProductAmountContainer>
-                  <ProductPrice>£ {(product.price*product.quantity).toFixed(2)}</ProductPrice>
+                  <ProductPrice>£ {product.hasDiscount ? (product.newPrice*product.quantity).toFixed(2) : (product.price*product.quantity).toFixed(2)}</ProductPrice>
                 </PriceDetail>
                 <DeleteItem onClick={() => handleDelete(product)}>
                 <DeleteOutline />

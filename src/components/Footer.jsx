@@ -3,6 +3,7 @@ import React from 'react'
 import { styled } from 'styled-components'
 import {mobile} from "../responsive";
 import {tabletMini} from "../responsive";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
 display: flex;
@@ -72,6 +73,16 @@ margin-right:20px;
 cursor:pointer;
 `;
 const Footer = () => {
+  const navigate = useNavigate();
+  const goHome = () => {
+    navigate("/");
+  }
+  const goCart = () => {
+    navigate("/cart");
+  }
+  const goAdmin = () => {
+    window.location.replace('https://lidl-shopping-website-admin.onrender.com/');
+  }
   return (
     <Container>
       <Left>
@@ -82,10 +93,10 @@ const Footer = () => {
       <Center>
         <Title>Links</Title>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
+          <ListItem onClick={goHome}>Home</ListItem>
+          <ListItem onClick={goCart}>Cart</ListItem>
+          <ListItem onClick={goAdmin}>Admin Page</ListItem>
           <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
           <ListItem>Cooperation</ListItem>
           <ListItem>Terms</ListItem>
         </List>

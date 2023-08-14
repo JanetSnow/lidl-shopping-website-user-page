@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Product from "./Product";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { publicRequest } from "../requestMethods";
 
 const Container = styled.div`

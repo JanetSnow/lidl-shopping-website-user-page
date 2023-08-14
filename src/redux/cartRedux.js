@@ -12,7 +12,7 @@ const cartSlice = createSlice({
             //action.payload represents every order; when add button is clicked, this returns that order
             state.quantity += action.payload.quantity;
             state.products.push(action.payload);
-            state.total += action.payload.price*action.payload.quantity;
+            state.total += action.payload.hasDiscount ? action.payload.newPrice*action.payload.quantity : action.payload.price*action.payload.quantity;
         },
         deleteProductInCart:(state,action) => { 
             // state.products.splice(
@@ -21,7 +21,7 @@ const cartSlice = createSlice({
             // );  
             state.products = state.products.filter(product => product._id !== action.payload._id);
             state.quantity -= action.payload.quantity;
-            state.total -= action.payload.price*action.payload.quantity;
+            state.total -= action.payload.hasDiscount ? action.payload.newPrice*action.payload.quantity : action.payload.price*action.payload.quantity;
         },
         deleteAllProducts:(state) => {
             state.products = [];

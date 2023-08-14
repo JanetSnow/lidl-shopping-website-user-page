@@ -87,7 +87,9 @@ const CartNavbar = () => {
           <Link to="/login" style={{ textDecoration: 'none', color:"black" }}>
             <NavItem onClick={user && handleLogOut}>{user ? "SIGN OUT" : "SIGN IN"}</NavItem>
           </Link>
-          <NavItem>CONTACT US</NavItem>
+          <Link to="/" style={{ textDecoration: 'none', color:"black" }}>
+          <NavItem>HOME</NavItem>
+          </Link>
       </NavItems>
       <Wrapper>
           <Left>

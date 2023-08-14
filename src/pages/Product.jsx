@@ -79,6 +79,16 @@ const Desc = styled.p`
   ${tablet({fontSize:"14px", margin:"20px 0"})}
 `;
 
+const OldPrice = styled.span`
+  font-weight: 100;
+  font-size: 20px;
+  font-weight:500;
+  text-decoration: line-through;
+  color:gray;
+  margin-right: 10px;
+  ${tablet({fontSize:"15px"})}
+`;
+
 const Price = styled.span`
   font-weight: 100;
   font-size: 20px;
@@ -191,7 +201,8 @@ const Product = () => {
           <Desc>
             {product.desc}
           </Desc>
-          <Price>£ {product.price}</Price>
+          {product.hasDiscount && <OldPrice>£ {product.price}</OldPrice>}
+          <Price>£ {product.hasDiscount ? product.newPrice : product.price}</Price>
           <AddContainer>
             <AmountContainer>
               <MinuBtn onClick={()=>handleNumber("dec")}><Remove /></MinuBtn>
