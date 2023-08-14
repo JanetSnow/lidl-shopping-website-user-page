@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
-  height: 85vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  margin-bottom: 80px;
 `;
 
 const DiscountTitle = styled.h1`
