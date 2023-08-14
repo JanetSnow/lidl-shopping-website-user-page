@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   height: 80%;
   display: flex;
   transition: all 1.5s ease;
-  transform: translateX(${(props) => props.slideindex * -100}vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -132,7 +132,7 @@ const Slider = () => {
         <Arrow direction="left" onClick={() => handleClick("left")}>
             <ArrowLeftOutlined />
         </Arrow>
-        <Wrapper slideindex={slideIndex}>
+        <Wrapper slideIndex={slideIndex}>
             {products.map((item) => (
                 item.hasDiscount && 
             <Slide key={item._id}>
