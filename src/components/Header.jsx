@@ -2,7 +2,6 @@ import { styled } from 'styled-components'
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Categories from "../components/Categories";
-// import headerBG from "images/headerBG.jpeg"
 import {mobile} from "../responsive";
 import {tablet} from "../responsive";
 import {tabletMini} from "../responsive";
@@ -12,8 +11,6 @@ width: 100vw;
 height: 100vh;
 display: flex;
 position: relative;
-/* overflow: hidden; */
-/* margin-top: 35px; */
 `;
 const Wrapper = styled.div`
 width:100%;
@@ -21,7 +18,7 @@ height: 90%;
 display: flex;
 background-size: cover;
 background-position: center;
-background-image: url(${props => props.img});
+background-image:url(/images/headerBG.jpeg);
 ${tabletMini({display: "block", height: "92%"})}
 ${mobile({display: "block", height: "90%"})}
 `;
@@ -146,7 +143,7 @@ const Header = () => {
     const user = useSelector(state => state.user.currentUser);
     return (
         <Container>
-        <Wrapper img="images/headerBG.jpeg">
+        <Wrapper>
         <Left>
             <MenuItems>
                 <Categories />

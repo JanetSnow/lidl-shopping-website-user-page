@@ -109,9 +109,9 @@ const Navbar = () => {
       e.preventDefault();
       logout(dispatch);
   }
-  const handleSearch = async (e) => {
+  const handleSearch = async () => {
     try{
-      e.preventDefault();
+      setTitle(title.charAt(0).toUpperCase() + title.slice(1));
       const res = await publicRequest.get(`/products/findbytitle/${title}`);
       // 要是{}的样子，而不是数组
       res.data[0] && navigate(`/product/${res.data[0]._id}`);
