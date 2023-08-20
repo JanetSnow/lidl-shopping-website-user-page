@@ -23,9 +23,9 @@ text-decoration: underline;
 `;
 
 const SubContainer = styled.div`
-display: flex;
-align-items: center;
-flex-direction: column;
+/* display: flex;
+align-items: center; */
+/* flex-direction: column; */
 `;
 
 const Arrow = styled.div`
@@ -33,9 +33,9 @@ const Arrow = styled.div`
   height: 50px;
   background-color: #fff7f7;
   border-radius: 50%;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
   position: absolute;
   top: 0;
   bottom: 0;
