@@ -23,8 +23,9 @@ text-decoration: underline;
 `;
 
 const SubContainer = styled.div`
-/* display: flex;
-align-items: center; */
+display: flex;
+/* align-items: center; */
+justify-items:center;
 /* flex-direction: column; */
 `;
 
