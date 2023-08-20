@@ -2,9 +2,11 @@ import { Search } from '@mui/icons-material';
 import { styled } from 'styled-components'
 import {mobile} from "../responsive";
 import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/apiCalls';
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import {publicRequest} from "../requestMethods";
 
 const Container = styled.div`
 width:100vw;
@@ -75,11 +77,21 @@ justify-content: flex-end;
 const CartNavbar = () => {
   const user = useSelector(state => state.user.currentUser);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [title, setTitle] = useState("");
 
   const handleLogOut = (e) => {
       e.preventDefault();
       logout(dispatch);
   }
+  const handleSearch = async () => {
+    try{
+      setTitle(title.charAt(0).toUpperCase() + title.slice(1));
+      const res = await publicRequest.get(`/products/findbytitle/${title}`);
+      // 要是{}的样子，而不是数组
+      res.data[0] && navigate(`/product/${res.data[0]._id}`);
+    }catch{}
+  };
  
   return (
     <Container>
@@ -100,8 +112,8 @@ const CartNavbar = () => {
           </Left>
           <Center>
           <SearchContainer>
-              <Search style={{color: "gray", fontSize: 24}}/>
-              <Input placeholder= "Find a product"/>
+              <Search style={{color: "gray", fontSize: 24, cursor: "pointer"}} onClick={handleSearch} />
+              <Input placeholder= "Find a product" onChange={e => setTitle(e.target.value)} />
           </SearchContainer>
           </Center>
           <Right>

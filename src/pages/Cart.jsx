@@ -14,8 +14,7 @@ import { DeleteOutline } from "@mui/icons-material";
 import { deleteAllProducts, deleteProductInCart } from "../redux/cartRedux";
 
 
-// const KEY = process.env.REACT_APP_STRIPE;
-const KEY = "pk_test_51NTQF2F5QMnxbnCZxYlLZlVMFmjwU1f44Fyq9LNQBENlXIyuHNfH9l0rD0u7jlbFD7TgKOzMjwtXq4fgrprR2vyf00CLniwL6o";
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -170,7 +169,7 @@ const Cart = () => {
       }catch{}
     };
     stripeToken && makeRequest();
-  },[stripeToken, cart.total,cart, navigate]);
+  },[stripeToken, cart, dispatch, navigate]);
 
   const handleDelete = (product) => {
     try {
