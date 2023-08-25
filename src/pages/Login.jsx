@@ -122,7 +122,7 @@ const Login = () => {
         <Form>
             <Input placeholder="email" onChange={e => setEmail(e.target.value)} />
             <Input placeholder="password" type="password" onChange={e => setPassword(e.target.value)} />
-            <Button onClick={handleLogin} disabled={isFetching}>LOGIN</Button>
+            <Button onClick={handleLogin}>LOGIN</Button>
             {error && <Error>Your email or password is not correct</Error>}
             <LinkR>DO NOT REMEMBER THE PASSWORD?</LinkR>
             <LinkR>CREATE A NEW ACCOUNT</LinkR>

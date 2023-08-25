@@ -98,31 +98,14 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
   const dispatch = useDispatch();
-  // const {currentUser} = useSelector((state) => state.user);
+  const {error, isRegistered} = useSelector((state) => state.user);
 
-
-  const handleClick = async (e) => {
+  const handleClick = e => {
     e.preventDefault();
-    setError(false);
-    try {
-      const res = await publicRequest.post("/auth/register", {
-        firstname,
-        lastname,
-        username,
-        email,
-        password,
-      });
-    } catch (err) {
-      setError(true);
-    }
+    register(dispatch, {firstname,lastname,username,email,password});
   };
 
-  // const handleClick = e => {
-  //   e.preventDefault();
-  //   register(dispatch, {firstname,lastname,username,email,password});
-  // }
 
   return (
     <Container>
@@ -150,9 +133,10 @@ const Register = () => {
             <Agreement> By creating a Lidl account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b></Agreement>
             <Button onClick={handleClick} >CREATE ACCOUNT</Button>
-            {error ? <Error>Your information is not correctly entered</Error> 
+            {error ? <Error>Your information is not correctly entered or this account has been registered</Error> 
             : <Success>go to<Link to="/login"><LoginLink>sign in</LoginLink></Link>
             </Success>}
+            {isRegistered && <p style={{color: "red"}}>you have successfully created your account</p>}
         </Form>
         </RegisterDetail>
       </Wrapper>

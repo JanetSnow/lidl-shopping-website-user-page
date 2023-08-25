@@ -163,7 +163,7 @@ const Cart = () => {
           // amount: cart.total >= 25? cart.total*100 : cart.total*100 + 350
           amount:500,
         });
-        // console.log("purchased products details: " + res.data);
+        console.log("purchased products details: " + res.data);
         navigate("/success",{state:{stripeData: res.data, cart: cart}});
         dispatch(deleteAllProducts());
       }catch{}
