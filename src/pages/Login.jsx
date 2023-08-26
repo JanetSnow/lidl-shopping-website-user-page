@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 import { login } from "../redux/apiCalls";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import { loginFailure } from "../redux/userRedux";
 
 const Container = styled.div`
 width: 100vw;
@@ -100,7 +101,11 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault();
-    login(dispatch, {email,password});
+    if(email !== "" && password !== ""){
+      login(dispatch, {email,password});
+    }else {
+      dispatch(loginFailure());
+    }
   }
   return (
     <Container>

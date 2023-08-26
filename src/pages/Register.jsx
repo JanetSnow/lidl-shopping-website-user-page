@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import { publicRequest } from "../requestMethods";
 import { register } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
+import { registerFailure } from "../redux/userRedux";
 
 const Container = styled.div`
 width: 100vw;
@@ -103,7 +104,11 @@ const Register = () => {
 
   const handleClick = e => {
     e.preventDefault();
-    register(dispatch, {firstname,lastname,username,email,password});
+    if(email !== "" && password !== ""){
+      register(dispatch, {firstname,lastname,username,email,password});
+    }else {
+      dispatch(registerFailure());
+    }
   };
 
 
