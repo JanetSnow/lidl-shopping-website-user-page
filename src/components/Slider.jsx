@@ -19,7 +19,7 @@ const Container = styled.div`
 const DiscountTitle = styled.h1`
 font-size: 24px;
 margin-bottom: 30px;
-text-decoration: underline;
+/* text-decoration: underline; */
 `;
 
 const SubContainer = styled.div`

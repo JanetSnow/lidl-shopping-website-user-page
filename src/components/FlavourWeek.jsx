@@ -17,7 +17,7 @@ const Container = styled.div`
 const Header = styled.h1`
 font-size: 24px;
 margin-bottom: 30px;
-text-decoration: underline;
+/* text-decoration: underline; */
 text-align: center;
 `;
 const ProductContainer = styled.div`
