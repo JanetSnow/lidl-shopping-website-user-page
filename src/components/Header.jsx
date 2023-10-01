@@ -12,7 +12,7 @@ width: 100vw;
 height: 100vh;
 display: flex;
 position: relative;
-${tabletMini({height: "110vh"})}
+/* ${tabletMini({height: "1vh"})} */
 `;
 const Wrapper = styled.div`
 width:100%;
@@ -21,8 +21,8 @@ display: flex;
 background-size: cover;
 background-position: center;
 background-image:url(/images/headerBG.jpeg);
-${tabletMini({display: "block", height: "92%"})}
-${mobile({display: "block", height: "92%"})}
+${tabletMini({display: "block", height: "95%"})}
+${mobile({display: "block", height: "95%"})}
 `;
 const Left = styled.div`
 flex: 1;
