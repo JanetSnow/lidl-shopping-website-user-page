@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts, updateDiscountProduct } from "../redux/apiCalls";
 import { Link } from "react-router-dom";
+import {mobile} from "../responsive";
+import {tabletMini} from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -14,6 +16,8 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   margin-bottom: 80px;
+  ${tabletMini({marginTop: "25px"})}
+  ${mobile({marginTop: "25px"})}
 `;
 
 const DiscountTitle = styled.h1`
