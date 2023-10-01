@@ -21,8 +21,8 @@ display: flex;
 background-size: cover;
 background-position: center;
 background-image:url(/images/headerBG.jpeg);
-${tabletMini({display: "block", height: "100%"})}
-${mobile({display: "block", height: "100%"})}
+${tabletMini({display: "block", height: "92%"})}
+${mobile({display: "block", height: "92%"})}
 `;
 const Left = styled.div`
 flex: 1;
