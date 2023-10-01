@@ -62,6 +62,10 @@ const Button = styled.button`
   font-size: 12px;
   background-color: transparent;
   cursor: pointer;
+  &:hover{
+    background-color: black;
+    color: white;
+  }
 `;
 
 const FlavourWeek = () => {

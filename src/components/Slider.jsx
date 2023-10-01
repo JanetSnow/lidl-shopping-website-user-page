@@ -42,7 +42,7 @@ const Arrow = styled.div`
   bottom: 0;
   margin: auto;
   cursor: pointer;
-  opacity: 0.5;
+  /* opacity: 0.9; */
   z-index: 2;
 `;
 
@@ -100,6 +100,10 @@ const Button = styled.button`
   font-size: 12px;
   background-color: transparent;
   cursor: pointer;
+  &:hover{
+    background-color: black;
+    color: white;
+  }
 `;
 
 const Slider = () => {
