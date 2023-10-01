@@ -15,7 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   ${tabletMini({marginTop: "25px"})}
   ${mobile({marginTop: "25px"})}
 `;
