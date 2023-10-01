@@ -83,6 +83,18 @@ const Footer = () => {
   const goAdmin = () => {
     window.location.replace('https://lidl-shopping-website-admin.onrender.com/');
   }
+  const linkFacebook = () => {
+    window.location.replace('https://www.facebook.com/lidlgb');
+  }
+  const linkIns = () => {
+    window.location.replace('https://www.instagram.com/lidlgb/?hl=en');
+  }
+  const linkTwitter = () => {
+    window.location.replace('https://twitter.com/LidlGB');
+  }
+  const linkPint = () => {
+    window.location.replace('https://www.pinterest.co.uk/lidlGB/');
+  }
   return (
     <Container>
       <Left>
@@ -96,24 +108,24 @@ const Footer = () => {
           <ListItem onClick={goHome}>Home</ListItem>
           <ListItem onClick={goCart}>Cart</ListItem>
           <ListItem onClick={goAdmin}>Admin Page</ListItem>
-          <ListItem>My Account</ListItem>
+          {/* <ListItem>My Account</ListItem>
           <ListItem>Cooperation</ListItem>
-          <ListItem>Terms</ListItem>
+          <ListItem>Terms</ListItem> */}
         </List>
       </Center>
       <Right>
       <SocialContainer>
         <SocialIcon>
-            <Facebook />
+            <Facebook onClick={linkFacebook} />
         </SocialIcon>
         <SocialIcon>
-            <Instagram />
+            <Instagram onClick={linkIns} />
         </SocialIcon>
         <SocialIcon>
-            <Twitter />
+            <Twitter onClick={linkTwitter} />
         </SocialIcon>
         <SocialIcon>
-            <Pinterest />
+            <Pinterest onClick={linkPint} />
         </SocialIcon>
       </SocialContainer>
       </Right>
