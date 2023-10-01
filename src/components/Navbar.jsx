@@ -140,16 +140,11 @@ const Navbar = () => {
         </Left>
         <Center>
         <SearchContainer>
-            {/* <Link to={`/product/${product._id}`}> */}
-              <Search style={{color: "gray", fontSize: 24, cursor: "pointer"}} onClick={handleSearch}/>
-            {/* </Link> */}
+            <Search style={{color: "gray", fontSize: 24, cursor: "pointer"}} onClick={handleSearch}/>
             <Input placeholder= "Find a product" onChange={e => setTitle(e.target.value)} />
         </SearchContainer>
         </Center>
         <Right>           
-            <MenuItem>
-              <Button>Check Out</Button>
-            </MenuItem>
             <Link to="/cart">
               <MenuItem>
                 <Badge badgeContent={quantity} color="primary">
