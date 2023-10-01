@@ -56,7 +56,7 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   height: 65%;
-  margin: 0 30px;
+  margin: 0 80px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -141,15 +141,15 @@ const Slider = () => {
                 item.hasDiscount && 
             <Slide key={item._id}>
                 <ImgContainer>
-                <Image src={item.img} />
+                  <Image src={item.img} />
                 </ImgContainer>
                 <InfoContainer>
-                <Title>{item.title}</Title>
-                <OldPrice>£{item.price}</OldPrice>
-                <NewPrice>£{(item.price - item.price * 0.1).toFixed(2)}</NewPrice>
-                <Link to={`/product/${item._id}`}>
-                    <Button onClick={() => updatePrice(item, item._id)}>SEE DETAILS</Button>
-                </Link>
+                  <Title>{item.title}</Title>
+                  <OldPrice>£{item.price}</OldPrice>
+                  <NewPrice>£{(item.price - item.price * 0.1).toFixed(2)}</NewPrice>
+                  <Link to={`/product/${item._id}`}>
+                      <Button onClick={() => updatePrice(item, item._id)}>SEE DETAILS</Button>
+                  </Link>
                 </InfoContainer>
             </Slide>
             ))}
