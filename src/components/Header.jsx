@@ -2,6 +2,7 @@ import { styled } from 'styled-components'
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Categories from "../components/Categories";
+import { ExpandMoreOutlined } from '@mui/icons-material';
 import {mobile} from "../responsive";
 import {tablet} from "../responsive";
 import {tabletMini} from "../responsive";
@@ -28,6 +29,22 @@ margin: 0 35px;
 ${tablet({width: "244px"})}
 ${tabletMini({margin:"0 20px", fontSize:"15px"})}
 ${mobile({margin:"0 20px", fontSize:"15px"})}
+`;
+const HomePageGroceryWrapper = styled.div`
+display: flex;
+align-items: center;
+background-color: white;
+border: #429cf5 2px;
+border-style: solid solid none solid;
+padding:0px 5px;
+`;
+const GroceryTitle = styled.h2`
+font-size:18px;
+padding: 10px 25px 10px 10px;
+cursor: pointer;
+&:hover{
+    text-decoration: underline solid 2px #429cf5;
+}
 `;
 
 const MenuItems = styled.div`
@@ -145,6 +162,10 @@ const Header = () => {
         <Container>
         <Wrapper>
         <Left>
+            <HomePageGroceryWrapper>
+                <GroceryTitle>Groceries</GroceryTitle>
+                <ExpandMoreOutlined></ExpandMoreOutlined>
+            </HomePageGroceryWrapper>
             <MenuItems>
                 <Categories />
             </MenuItems>
