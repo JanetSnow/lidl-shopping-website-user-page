@@ -11,16 +11,18 @@ const Container = styled.div`
 width: 100vw;
 height: 100vh;
 display: flex;
-position: relative;
+/* position: relative; */
 /* ${tabletMini({height: "110vh"})} */
 `;
 const Wrapper = styled.div`
 width:100%;
 height: 90%;
 display: flex;
-background-size: cover;
+position: relative;
+overflow: hidden;
+/* background-size: cover;
 background-position: center;
-background-image:url(/images/headerBG.jpeg);
+background-image:url(/images/headerBG.jpeg); */
 ${tabletMini({display: "block", height: "98%"})}
 ${mobile({display: "block", height: "98%"})}
 `;
@@ -161,7 +163,11 @@ const Header = () => {
     const user = useSelector(state => state.user.currentUser);
     return (
         <Container>
+        
         <Wrapper>
+        <video autoPlay loop muted plays-inline="true" style={{position: "absolute", right: 0, bottom: 0, zIndex: -1, objectFit: "cover", minWidth: "100%", minHeight: "100%"}}>
+            <source src="/images/headerBG.mp4" type="video/mp4"></source>
+        </video>
         <Left>
             <HomePageGroceryWrapper>
                 <GroceryTitle>Groceries</GroceryTitle>
