@@ -74,7 +74,8 @@ border-radius: 5px;
 margin-top: 75px;
 background-color: white;
 padding: 40px 30px;
-${tablet({margin: "30px 35px 0px 0"})}
+${tablet({margin: "30px 35px 0px 0", padding: "45px 30px"})}
+${tabletMini({padding: "40px 30px"})}
 `;
 const IntroTitle = styled.p`
 font-weight: 600;
@@ -88,9 +89,9 @@ border-radius: 5px;
 margin: 75px 50px 0px 40px;
 background-color: white;
 padding: 20px;
-${tablet({margin: "30px 35px 30px 0"})}
-${tabletMini({ margin:"20px 35px", padding: "15px 20px"})}
-${mobile({margin: "30px 35px", padding:"20px"})}
+${tablet({margin: "30px 35px 30px 0", padding: "25px 20px"})}
+${tabletMini({ margin:"20px 35px", padding: "25px 20px"})}
+${mobile({margin: "30px 35px"})}
 
 display: ${props =>props.user && "none"};
 `;
