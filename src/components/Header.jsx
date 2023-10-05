@@ -12,7 +12,7 @@ width: 100vw;
 height: 100vh;
 display: flex;
 /* position: relative; */
-/* ${tabletMini({height: "110vh"})} */
+${tabletMini({height: "105vh"})}
 `;
 const Wrapper = styled.div`
 width:100%;
@@ -21,10 +21,10 @@ display: flex;
 position: relative;
 overflow: hidden;
 /* background-size: cover;
-background-position: center;
-background-image:url(/images/headerBG.jpeg); */
-${tabletMini({display: "block", height: "98%"})}
-${mobile({display: "block", height: "98%"})}
+background-position: center; */
+/* background-image:url(/images/headerBG.jpeg); */
+${tabletMini({display: "block", height: "100%"})}
+${mobile({display: "block", height: "100%"})}
 `;
 const Left = styled.div`
 flex: 1;
