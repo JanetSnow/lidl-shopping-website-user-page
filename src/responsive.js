@@ -9,7 +9,7 @@ export const tablet = (props) => {
 };
 export const tabletMini = (props) => {
     return css`
-      @media only screen and (max-width: 635px) {
+      @media only screen and (max-width: 650px) {
         ${props}
       }
     `;
