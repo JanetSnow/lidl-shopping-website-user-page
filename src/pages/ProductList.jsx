@@ -86,7 +86,6 @@ const ProductList = () => {
       </Grocery>
 
       <ProductListWrapper clicked={click.toString()}>
-        <Title>Dresses</Title>
         <Filter>
           <FilterText>Sort by:</FilterText>
           <Select onChange={(e)=>setSort(e.target.value)}>
